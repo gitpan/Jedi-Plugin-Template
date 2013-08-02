@@ -1,0 +1,55 @@
+building test distribution under .build/cOX_Cqcgj1
+[DZ] beginning to build Jedi-Plugin-Template
+[DZ] guessing dist's main_module is lib/Jedi/Plugin/Template.pm
+[DZ] extracting distribution abstract from lib/Jedi/Plugin/Template.pm
+[@GRS/@Filter/ExtraTests] rewriting release test xt/release/unused-vars.t
+[@GRS/@Filter/ExtraTests] rewriting release test xt/release/pod-coverage.t
+[@GRS/@Filter/ExtraTests] rewriting author test xt/author/critic.t
+[DZ] writing Jedi-Plugin-Template in .build/cOX_Cqcgj1
+Created MYMETA.yml and MYMETA.json
+Creating new 'Build' script for 'Jedi-Plugin-Template' version '0.01'
+Building Jedi-Plugin-Template
+t/00-compile.t ......................... ok
+# Testing with Perl 5.018000, /home/gitlab_ci/perl5/perlbrew/perls/perl-5.18.0/bin/perl
+#     Carp version is 1.29
+#     File::Find version is 1.23
+#     File::Temp version is 0.23
+#     HTTP::Request::Common version is 6.04
+#     Jedi version is 0.09
+#     Jedi::App version is 0.09
+#     MIME::Types version is 1.38
+#     Module::Build version is 0.4003
+#     Moo::Role version is undefined
+#     Path::Class version is 0.32
+#     Plack::Test version is undefined
+#     Scalar::Util version is 1.27
+#     Template version is 2.24
+#     Test::More version is 0.98
+#     Test::Most version is 0.31
+#     feature version is 1.32
+#     strict version is 1.07
+#     warnings version is 1.18
+t/000-report-versions.t ................ ok
+t/TestApp/jedi-plugin-template.t ....... ok
+t/TestTemplate/jedi-plugin-template.t .. ok
+t/author-critic.t ...................... ok
+t/release-pod-coverage.t ............... ok
+t/release-unused-vars.t ................ ok
+All tests successful.
+Files=7, Tests=44,  4 wallclock secs ( 0.04 usr  0.01 sys +  3.53 cusr  0.20 csys =  3.78 CPU)
+Result: PASS
+cover
+Reading database from /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/cOX_Cqcgj1/cover_db
+
+
+---------------------------- ------ ------ ------ ------ ------ ------ ------
+File                           stmt   bran   cond    sub    pod   time  total
+---------------------------- ------ ------ ------ ------ ------ ------ ------
+...b/Jedi/Plugin/Template.pm  100.0  100.0  100.0  100.0  100.0  100.0  100.0
+Total                         100.0  100.0  100.0  100.0  100.0  100.0  100.0
+---------------------------- ------ ------ ------ ------ ------ ------ ------
+
+
+HTML output written to /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/cOX_Cqcgj1/cover_db/coverage.html
+done.
+leaving .build/cOX_Cqcgj1 intact

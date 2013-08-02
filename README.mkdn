@@ -1,0 +1,69 @@
+# NAME
+
+Jedi::Plugin::Template - Jedi Plugin for Template Toolkit
+
+# VERSION
+
+version 0.01
+
+# DESCRIPTION
+
+This will add missing route to catch public file if exists.
+
+This will also give a "jedi\_template" method to display your template.
+
+To use it in your Jedi app :
+
+	package MyApps;
+	use Jedi::App;
+	with 'Jedi::Plugin::Template';
+
+	sub jedi_app {
+		...
+		$response->body($jedi->jedi_template('test.tt'));
+	}
+
+	1;
+
+# ATTRIBUTES
+
+## jedi\_template\_default\_layout
+
+if you want to set a default layout, use this attribute.
+
+	$jedi->jedi_template_default_layout('main.tt');
+
+# METHODS
+
+## jedi\_template
+
+This method will use [Template](http://search.cpan.org/perldoc?Template) to process your template.
+
+	$jedi->jedi_template($file, $vars);
+	$jedi->jedi_template($file, $vars, $layout);
+
+The layout use the jedi\_template\_default\_layout by default.
+You can also remove any layout, using the value "none".
+
+The file is a file inside the subdir "views". The subdir "views" is located on the root of your apps, in
+the same directory than the "config.\*".
+
+# BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://tasks.celogeek.com/projects/perl-modules-jedi
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+# AUTHOR
+
+celogeek <me@celogeek.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by celogeek <me@celogeek.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
