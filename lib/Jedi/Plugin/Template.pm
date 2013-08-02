@@ -11,12 +11,15 @@ package Jedi::Plugin::Template;
 # ABSTRACT: Jedi Plugin for Template Toolkit
 
 use Moo::Role;
-our $VERSION = '0.01';    # VERSION
+our $VERSION = '0.02';    # VERSION
 use Template;
 use Path::Class;
 use feature 'state';
 use MIME::Types qw/by_suffix/;
 use Carp qw/croak/;
+use IO::Compress::Gzip qw(gzip);
+use HTTP::Date qw/time2str/;
+use Digest::SHA qw/sha1_base64/;
 
 # This part is for handle the public subdir
 # It catch all files from path info and send it if the file exists
@@ -41,8 +44,24 @@ sub _jedi_dispatch_public_files {
     my $type    = $mime_type . '; charset=' . $encoding;
     my $content = $file->slurp();
 
+    my $accept_encoding = $request->env->{HTTP_ACCEPT_ENCODING} // '';
+    if ( $accept_encoding =~ /gzip/ ) {
+        my $content_unpack = $content;
+        gzip \$content_unpack => \$content;
+        $response->set_header( 'Content-Encoding', 'gzip' );
+        $response->set_header( 'Vary',             'Accept-Encoding' );
+    }
+
+    my $now         = time;
+    my $last_change = $file->stat()->mtime;
+    $response->set_header( 'Last-Modified', time2str($last_change) );
+    $response->set_header( 'Expires',       time2str( $now + 86400 ) );
+    $response->set_header( 'Cache-Control', 'max-age=86400' );
+    $response->set_header( 'ETag',          sha1_base64($content) );
+
     $response->status(200);
     $response->set_header( 'Content-Type', $type );
+    $response->set_header( 'Content-Length' => length($content) );
     $response->body($content);
 
     return;
@@ -108,7 +127,7 @@ Jedi::Plugin::Template - Jedi Plugin for Template Toolkit
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 

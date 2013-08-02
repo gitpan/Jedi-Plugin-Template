@@ -1,20 +1,24 @@
-building test distribution under .build/cOX_Cqcgj1
+building test distribution under .build/TT4HivT3E1
 [DZ] beginning to build Jedi-Plugin-Template
 [DZ] guessing dist's main_module is lib/Jedi/Plugin/Template.pm
 [DZ] extracting distribution abstract from lib/Jedi/Plugin/Template.pm
 [@GRS/@Filter/ExtraTests] rewriting release test xt/release/unused-vars.t
 [@GRS/@Filter/ExtraTests] rewriting release test xt/release/pod-coverage.t
 [@GRS/@Filter/ExtraTests] rewriting author test xt/author/critic.t
-[DZ] writing Jedi-Plugin-Template in .build/cOX_Cqcgj1
+[DZ] writing Jedi-Plugin-Template in .build/TT4HivT3E1
 Created MYMETA.yml and MYMETA.json
-Creating new 'Build' script for 'Jedi-Plugin-Template' version '0.01'
+Creating new 'Build' script for 'Jedi-Plugin-Template' version '0.02'
 Building Jedi-Plugin-Template
 t/00-compile.t ......................... ok
 # Testing with Perl 5.018000, /home/gitlab_ci/perl5/perlbrew/perls/perl-5.18.0/bin/perl
 #     Carp version is 1.29
+#     Digest::SHA version is 5.84
 #     File::Find version is 1.23
 #     File::Temp version is 0.23
+#     HTTP::Date version is 6.02
 #     HTTP::Request::Common version is 6.04
+#     IO::Compress::Gzip version is 2.060
+#     IO::Uncompress::Gunzip version is 2.060
 #     Jedi version is 0.09
 #     Jedi::App version is 0.09
 #     MIME::Types version is 1.38
@@ -36,10 +40,10 @@ t/author-critic.t ...................... ok
 t/release-pod-coverage.t ............... ok
 t/release-unused-vars.t ................ ok
 All tests successful.
-Files=7, Tests=44,  4 wallclock secs ( 0.04 usr  0.01 sys +  3.53 cusr  0.20 csys =  3.78 CPU)
+Files=7, Tests=51,  4 wallclock secs ( 0.02 usr  0.01 sys +  3.76 cusr  0.30 csys =  4.09 CPU)
 Result: PASS
 cover
-Reading database from /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/cOX_Cqcgj1/cover_db
+Reading database from /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/TT4HivT3E1/cover_db
 
 
 ---------------------------- ------ ------ ------ ------ ------ ------ ------
@@ -50,6 +54,6 @@ Total                         100.0  100.0  100.0  100.0  100.0  100.0  100.0
 ---------------------------- ------ ------ ------ ------ ------ ------ ------
 
 
-HTML output written to /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/cOX_Cqcgj1/cover_db/coverage.html
+HTML output written to /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/TT4HivT3E1/cover_db/coverage.html
 done.
-leaving .build/cOX_Cqcgj1 intact
+leaving .build/TT4HivT3E1 intact
