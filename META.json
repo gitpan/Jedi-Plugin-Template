@@ -32,17 +32,22 @@
       },
       "runtime" : {
          "requires" : {
+            "B::Hooks::EndOfScope" : "0",
             "Carp" : "0",
             "Digest::SHA" : "0",
             "HTTP::Date" : "0",
             "IO::Compress::Gzip" : "0",
-            "Jedi" : "0.09",
+            "Import::Into" : "0",
+            "Jedi" : "0.10",
             "MIME::Types" : "0",
+            "Module::Runtime" : "0",
             "Moo::Role" : "0",
             "Path::Class" : "0",
             "Template" : "0",
             "feature" : "0",
-            "perl" : "5.010"
+            "perl" : "5.010",
+            "strict" : "0",
+            "warnings" : "0"
          }
       },
       "test" : {
@@ -57,9 +62,7 @@
             "Scalar::Util" : "0",
             "Test::More" : "0.94",
             "Test::Most" : "0",
-            "perl" : "5.004",
-            "strict" : "0",
-            "warnings" : "0"
+            "perl" : "5.004"
          }
       }
    },
@@ -75,7 +78,7 @@
          "web" : "https://github.com/celogeek/perl-jedi-plugin-template"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018000"

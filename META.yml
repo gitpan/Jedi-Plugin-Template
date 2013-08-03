@@ -15,8 +15,6 @@ build_requires:
   Test::More: 0.94
   Test::Most: 0
   perl: 5.004
-  strict: 0
-  warnings: 0
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -27,22 +25,27 @@ meta-spec:
   version: 1.4
 name: Jedi-Plugin-Template
 requires:
+  B::Hooks::EndOfScope: 0
   Carp: 0
   Digest::SHA: 0
   HTTP::Date: 0
   IO::Compress::Gzip: 0
-  Jedi: 0.09
+  Import::Into: 0
+  Jedi: 0.10
   MIME::Types: 0
+  Module::Runtime: 0
   Moo::Role: 0
   Path::Class: 0
   Template: 0
   feature: 0
   perl: 5.010
+  strict: 0
+  warnings: 0
 resources:
   bugtracker: https://tasks.celogeek.com/projects/perl-modules-jedi
   homepage: https://tasks.celogeek.com/projects/perl-modules-jedi
   repository: https://github.com/celogeek/perl-jedi-plugin-template.git
-version: 0.02
+version: 0.03
 x_Dist_Zilla:
   perl:
     version: 5.018000

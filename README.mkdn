@@ -4,7 +4,7 @@ Jedi::Plugin::Template - Jedi Plugin for Template Toolkit
 
 # VERSION
 
-version 0.02
+version 0.03
 
 # DESCRIPTION
 
@@ -16,7 +16,7 @@ To use it in your Jedi app :
 
 	package MyApps;
 	use Jedi::App;
-	with 'Jedi::Plugin::Template';
+	use Jedi::Plugin::Template;
 
 	sub jedi_app {
 		...
@@ -25,28 +25,16 @@ To use it in your Jedi app :
 
 	1;
 
-# ATTRIBUTES
-
-## jedi\_template\_default\_layout
-
-if you want to set a default layout, use this attribute.
-
-	$jedi->jedi_template_default_layout('main.tt');
+Take a look here : [Jedi::Plugin::Template::Role](http://search.cpan.org/perldoc?Jedi::Plugin::Template::Role)
 
 # METHODS
 
-## jedi\_template
+## import
 
-This method will use [Template](http://search.cpan.org/perldoc?Template) to process your template.
+This module is equivalent into your package to :
 
-	$jedi->jedi_template($file, $vars);
-	$jedi->jedi_template($file, $vars, $layout);
-
-The layout use the jedi\_template\_default\_layout by default.
-You can also remove any layout, using the value "none".
-
-The file is a file inside the subdir "views". The subdir "views" is located on the root of your apps, in
-the same directory than the "config.\*".
+	package MyApps;
+	with "Jedi::Plugin::Template::Role";
 
 # BUGS
 
