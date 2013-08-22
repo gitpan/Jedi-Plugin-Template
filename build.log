@@ -1,22 +1,13 @@
-building test distribution under .build/uGA8jJZlcp
+building test distribution under .build/XDs0Wnowqc
 [DZ] beginning to build Jedi-Plugin-Template
 [DZ] guessing dist's main_module is lib/Jedi/Plugin/Template.pm
 [DZ] extracting distribution abstract from lib/Jedi/Plugin/Template.pm
 [@GRS/@Filter/ExtraTests] rewriting release test xt/release/unused-vars.t
 [@GRS/@Filter/ExtraTests] rewriting release test xt/release/pod-coverage.t
 [@GRS/@Filter/ExtraTests] rewriting author test xt/author/critic.t
-[DZ] writing Jedi-Plugin-Template in .build/uGA8jJZlcp
-Checking prerequisites...
-  requires:
-    !  Jedi (0.09) is installed, but we need version >= 0.10
-
-ERRORS/WARNINGS FOUND IN PREREQUISITES.  You may wish to install the versions
-of the modules indicated above before proceeding with this installation
-
-Run 'Build installdeps' to install missing prerequisites.
-
+[DZ] writing Jedi-Plugin-Template in .build/XDs0Wnowqc
 Created MYMETA.yml and MYMETA.json
-Creating new 'Build' script for 'Jedi-Plugin-Template' version '0.03'
+Creating new 'Build' script for 'Jedi-Plugin-Template' version '0.04'
 Building Jedi-Plugin-Template
 t/00-compile.t ......................... ok
 # Testing with Perl 5.018000, /home/gitlab_ci/perl5/perlbrew/perls/perl-5.18.0/bin/perl
@@ -30,8 +21,8 @@ t/00-compile.t ......................... ok
 #     IO::Compress::Gzip version is 2.060
 #     IO::Uncompress::Gunzip version is 2.060
 #     Import::Into version is 1.001001
-#     Jedi version is 0.09
-#     Jedi::App version is 0.09
+#     Jedi version is 0.13
+#     Jedi::App version is 0.13
 #     MIME::Types version is 1.38
 #     Module::Build version is 0.4003
 #     Module::Runtime version is 0.013
@@ -52,21 +43,21 @@ t/author-critic.t ...................... ok
 t/release-pod-coverage.t ............... ok
 t/release-unused-vars.t ................ ok
 All tests successful.
-Files=7, Tests=58,  6 wallclock secs ( 0.03 usr  0.01 sys +  5.23 cusr  0.29 csys =  5.56 CPU)
+Files=7, Tests=58,  5 wallclock secs ( 0.04 usr  0.00 sys +  4.76 cusr  0.36 csys =  5.16 CPU)
 Result: PASS
 cover
-Reading database from /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/uGA8jJZlcp/cover_db
+Reading database from /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/XDs0Wnowqc/cover_db
 
 
 ---------------------------- ------ ------ ------ ------ ------ ------ ------
 File                           stmt   bran   cond    sub    pod   time  total
 ---------------------------- ------ ------ ------ ------ ------ ------ ------
-...b/Jedi/Plugin/Template.pm  100.0    n/a    n/a  100.0    n/a   48.7  100.0
-...i/Plugin/Template/Role.pm  100.0  100.0  100.0  100.0  100.0   51.3  100.0
+...b/Jedi/Plugin/Template.pm  100.0    n/a    n/a  100.0    n/a   56.2  100.0
+...i/Plugin/Template/Role.pm  100.0  100.0  100.0  100.0  100.0   43.8  100.0
 Total                         100.0  100.0  100.0  100.0  100.0  100.0  100.0
 ---------------------------- ------ ------ ------ ------ ------ ------ ------
 
 
-HTML output written to /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/uGA8jJZlcp/cover_db/coverage.html
+HTML output written to /home/gitlab_ci/repositories/celogeek/perl-modules-jedi-plugin-template/.build/XDs0Wnowqc/cover_db/coverage.html
 done.
-leaving .build/uGA8jJZlcp intact
+leaving .build/XDs0Wnowqc intact

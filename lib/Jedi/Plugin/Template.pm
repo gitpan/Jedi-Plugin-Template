@@ -13,7 +13,7 @@ package Jedi::Plugin::Template;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';    # VERSION
+our $VERSION = '0.04';    # VERSION
 
 use Import::Into;
 use Module::Runtime qw/use_module/;
@@ -40,7 +40,7 @@ Jedi::Plugin::Template - Jedi Plugin for Template Toolkit
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 DESCRIPTION
 
@@ -56,10 +56,40 @@ To use it in your Jedi app :
 
 	sub jedi_app {
 		...
-		$response->body($jedi->jedi_template('test.tt'));
+		$jedi->get('/bla', sub {
+			my ($jedi, $request, $response) = @_;
+			$response->body($jedi->jedi_template('test.tt'), {hello => 'world'}, 'main.tt');
+			return 1;
+		})
 	}
 
 	1;
+
+Here the structure of your app :
+
+	.
+	./bin/app.psgi
+	./config.yml
+	./environments
+	./environments/prod.yml
+	./views
+	./view/test.tt
+	./view/layouts/main.tt
+	./public
+
+The main.tt look like
+
+	<html>
+	<body>
+	This will wrap your content :
+	
+	[% content %]
+	</body>
+	</html>
+
+And your test.tt :
+
+	<p>Hello [% hello %]</p>
 
 Take a look here : L<Jedi::Plugin::Template::Role>
 

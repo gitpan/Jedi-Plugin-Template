@@ -11,7 +11,7 @@ package Jedi::Plugin::Template::Role;
 # ABSTRACT: Jedi Plugin for Template Toolkit (Role)
 
 use Moo::Role;
-our $VERSION = '0.03';    # VERSION
+our $VERSION = '0.04';    # VERSION
 use Template;
 use Path::Class;
 use feature 'state';
@@ -122,7 +122,7 @@ Jedi::Plugin::Template::Role - Jedi Plugin for Template Toolkit (Role)
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 ATTRIBUTES
 
