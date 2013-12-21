@@ -1,76 +1,136 @@
 # NAME
 
-Jedi::Plugin::Template - Jedi Plugin for Template Toolkit
+Jedi::Plugin::Template - Plugin for Template Toolkit
 
 # VERSION
 
-version 0.04
+version 1.000
 
 # DESCRIPTION
 
-This will add missing route to catch public file if exists.
+This is a [Template::Toolkit](http://search.cpan.org/perldoc?Template::Toolkit) plugin for [Jedi](http://search.cpan.org/perldoc?Jedi) web app framework.
 
-This will also give a "jedi\_template" method to display your template.
+[Jedi](http://search.cpan.org/perldoc?Jedi) is just a simple web app framework that help your create app above [Plack](http://search.cpan.org/perldoc?Plack).
+
+This plugin handle your [Template::Toolkit](http://search.cpan.org/perldoc?Template::Toolkit) files for you.
+
+It will use the Jedi config to get the directory of your templates. The default value is the dist\_dir of your module.
+
+# SYNOPSIS
+
+The directory of your templates should look like :
+
+    * public
+    * views
+      * layouts
+
+The public directory contain all your static files. It is generally your javascripts and css.
+
+The views directory contain all your template toolkit files.
+
+The views/layouts contain all your template toolkit layout files.
 
 To use it in your Jedi app :
 
-	package MyApps;
-	use Jedi::App;
-	use Jedi::Plugin::Template;
+    package MyApps;
+    use Jedi::App;
+    use Jedi::Plugin::Template;
 
-	sub jedi_app {
-		...
-		$jedi->get('/bla', sub {
-			my ($jedi, $request, $response) = @_;
-			$response->body($jedi->jedi_template('test.tt'), {hello => 'world'}, 'main.tt');
-			return 1;
-		})
-	}
+    sub jedi_app {
+      # ...
+      $jedi->get('/bla', sub {
+        my ($jedi, $request, $response) = @_;
+        $response->body(
+          $jedi->jedi_template('test.tt', {hello => 'world'}, 'main.tt');
+        );
+        return 1;
+      })
+    }
 
-	1;
+    1;
 
-Here the structure of your app :
+The views directory here, look like :
 
-	.
-	./bin/app.psgi
-	./config.yml
-	./environments
-	./environments/prod.yml
-	./views
-	./view/test.tt
-	./view/layouts/main.tt
-	./public
+    * views
+      * test.tt
+      * layouts
+        * main.tt
 
 The main.tt look like
 
-	<html>
-	<body>
-	This will wrap your content :
-	
+    <html>
+    <body>
+    This will wrap your content :
+    
 
-	[% content %]
-	</body>
-	</html>
+    [% content %]
+    </body>
+    </html>
 
 And your test.tt :
 
-	<p>Hello [% hello %]</p>
+    <p>Hello [% hello %]</p>
 
-Take a look here : [Jedi::Plugin::Template::Role](http://search.cpan.org/perldoc?Jedi::Plugin::Template::Role)
+# CONFIGURATION: template\_dir
 
-# METHODS
+By default [Jedi::Plugin::Template](http://search.cpan.org/perldoc?Jedi::Plugin::Template) will setup the 'template\_dir' configuration to the dist\_dir of your package :
 
-## import
+    MyApps:
+     template_dir: DIST_DIR('MyApps')
 
-This module is equivalent into your package to :
+You can create a config file to be able to do development in your working directory like this :
 
-	package MyApps;
-	with "Jedi::Plugin::Template::Role";
+    MyApps:
+     template_dir: ./share/
+
+In order to be able to deploy and use properly your app like any other perl packages, use the 'share' directory.
+
+With [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) it will be automatic if the "public" and "views" directory is placed under the "share" directory.
+
+If you use [Module::Build](http://search.cpan.org/perldoc?Module::Build) you need to defined : 
+
+    my %module_build_args = (
+     # ...
+     "share_dir" => {
+      "dist" => "share"
+     },
+     # ...
+    );
+
+# SET A DEFAULT LAYOUT: jedi\_template\_default\_layout
+
+    You can defined a default layout, by setting the attribute : 'jedi_template_default_layout'
+
+    $jedi_app->jedi_template_default_layout('main.tt');
+
+# GET YOUR TEMPLATE: jedi\_template
+
+The method 'jedi\_template' will use [Template](http://search.cpan.org/perldoc?Template) to process your template.
+
+    $jedi_app->jedi_template($file, \%vars);
+    $jedi_app->jedi_template($file, \%vars, $layout);
+
+The layout use the jedi\_template\_default\_layout by default.
+
+You can also remove any layout, using the value "none".
+
+    $jedi_app->jedi_template($file, \%vars, 'none'),
+
+# THE PUBLIC DIRECTORY
+
+The plugin will match all missing by sending a public file if this one exists. It handle cache and compression for you.
+
+    * public
+      * mystyle.css
+
+    curl http://localhost:3000/mystyle.css
+
+If no route match the '/mystyle.css', then the plugin will check in the public dir and send the file if this one is present.
 
 # BUGS
 
 Please report any bugs or feature requests on the bugtracker website
-https://tasks.celogeek.com/projects/perl-modules-jedi
+https://github.com/celogeek/perl-jedi-plugin-template/issues
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
