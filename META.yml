@@ -8,7 +8,7 @@ build_requires:
   IO::Handle: 0
   IO::Uncompress::Gunzip: 0
   IPC::Open3: 0
-  Jedi: 1.000
+  Jedi: 1.004
   Jedi::App: 0
   Module::Build: 0.3601
   Plack::Test: 0
@@ -34,7 +34,7 @@ requires:
   HTTP::Date: 0
   IO::Compress::Gzip: 0
   Import::Into: 0
-  Jedi: 1.000
+  Jedi: 1.004
   MIME::Types: 0
   Module::Runtime: 0
   Moo::Role: 0
@@ -48,10 +48,10 @@ resources:
   bugtracker: https://github.com/celogeek/perl-jedi-plugin-template/issues
   homepage: https://tasks.celogeek.com/projects/perl-modules-jedi
   repository: https://github.com/celogeek/perl-jedi-plugin-template.git
-version: 1.000
+version: 1.001
 x_Dist_Zilla:
   perl:
-    version: 5.018001
+    version: 5.018002
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
@@ -143,7 +143,7 @@ x_Dist_Zilla:
           script_finder:
             - ':ExecFiles'
       name: '@GRS/Test::Compile'
-      version: 2.037
+      version: 2.039
     -
       class: Dist::Zilla::Plugin::Test::UnusedVars
       name: '@GRS/Test::UnusedVars'

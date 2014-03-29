@@ -4,15 +4,15 @@ Jedi::Plugin::Template - Plugin for Template Toolkit
 
 # VERSION
 
-version 1.000
+version 1.001
 
 # DESCRIPTION
 
-This is a [Template::Toolkit](http://search.cpan.org/perldoc?Template::Toolkit) plugin for [Jedi](http://search.cpan.org/perldoc?Jedi) web app framework.
+This is a [Template::Toolkit](https://metacpan.org/pod/Template::Toolkit) plugin for [Jedi](https://metacpan.org/pod/Jedi) web app framework.
 
-[Jedi](http://search.cpan.org/perldoc?Jedi) is just a simple web app framework that help your create app above [Plack](http://search.cpan.org/perldoc?Plack).
+[Jedi](https://metacpan.org/pod/Jedi) is just a simple web app framework that help your create app above [Plack](https://metacpan.org/pod/Plack).
 
-This plugin handle your [Template::Toolkit](http://search.cpan.org/perldoc?Template::Toolkit) files for you.
+This plugin handle your [Template::Toolkit](https://metacpan.org/pod/Template::Toolkit) files for you.
 
 It will use the Jedi config to get the directory of your templates. The default value is the dist\_dir of your module.
 
@@ -62,7 +62,6 @@ The main.tt look like
     <body>
     This will wrap your content :
     
-
     [% content %]
     </body>
     </html>
@@ -73,7 +72,7 @@ And your test.tt :
 
 # CONFIGURATION: template\_dir
 
-By default [Jedi::Plugin::Template](http://search.cpan.org/perldoc?Jedi::Plugin::Template) will setup the 'template\_dir' configuration to the dist\_dir of your package :
+By default [Jedi::Plugin::Template](https://metacpan.org/pod/Jedi::Plugin::Template) will setup the 'template\_dir' configuration to the dist\_dir of your package :
 
     MyApps:
      template_dir: DIST_DIR('MyApps')
@@ -85,9 +84,9 @@ You can create a config file to be able to do development in your working direct
 
 In order to be able to deploy and use properly your app like any other perl packages, use the 'share' directory.
 
-With [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) it will be automatic if the "public" and "views" directory is placed under the "share" directory.
+With [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) it will be automatic if the "public" and "views" directory is placed under the "share" directory.
 
-If you use [Module::Build](http://search.cpan.org/perldoc?Module::Build) you need to defined : 
+If you use [Module::Build](https://metacpan.org/pod/Module::Build) you need to defined : 
 
     my %module_build_args = (
      # ...
@@ -105,7 +104,7 @@ If you use [Module::Build](http://search.cpan.org/perldoc?Module::Build) you nee
 
 # GET YOUR TEMPLATE: jedi\_template
 
-The method 'jedi\_template' will use [Template](http://search.cpan.org/perldoc?Template) to process your template.
+The method 'jedi\_template' will use [Template](https://metacpan.org/pod/Template) to process your template.
 
     $jedi_app->jedi_template($file, \%vars);
     $jedi_app->jedi_template($file, \%vars, $layout);

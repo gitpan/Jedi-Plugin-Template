@@ -33,7 +33,7 @@
             "HTTP::Date" : "0",
             "IO::Compress::Gzip" : "0",
             "Import::Into" : "0",
-            "Jedi" : "1.000",
+            "Jedi" : "1.004",
             "MIME::Types" : "0",
             "Module::Runtime" : "0",
             "Moo::Role" : "0",
@@ -52,7 +52,7 @@
             "IO::Handle" : "0",
             "IO::Uncompress::Gunzip" : "0",
             "IPC::Open3" : "0",
-            "Jedi" : "1.000",
+            "Jedi" : "1.004",
             "Jedi::App" : "0",
             "Plack::Test" : "0",
             "Scalar::Util" : "0",
@@ -75,10 +75,10 @@
          "web" : "https://github.com/celogeek/perl-jedi-plugin-template"
       }
    },
-   "version" : "1.000",
+   "version" : "1.001",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.018001"
+         "version" : "5.018002"
       },
       "plugins" : [
          {
@@ -196,7 +196,7 @@
                }
             },
             "name" : "@GRS/Test::Compile",
-            "version" : "2.037"
+            "version" : "2.039"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::UnusedVars",

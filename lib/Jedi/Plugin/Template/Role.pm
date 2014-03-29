@@ -13,7 +13,7 @@ package Jedi::Plugin::Template::Role;
 use strict;
 use warnings;
 
-our $VERSION = '1.000';    # VERSION
+our $VERSION = '1.001';    # VERSION
 use Template;
 use Path::Class;
 use feature 'state';
@@ -61,9 +61,11 @@ sub _jedi_template_setup_path {
 
 sub _jedi_dispatch_public_files {
     my ( $jedi_app, $request, $response ) = @_;
-    my $class = ref $jedi_app;
-    my $file  = file( $jedi_app->jedi_config->{$class}{template_dir},
-        'public', $request->env->{PATH_INFO} );
+    my $class      = ref $jedi_app;
+    my $delta_path = substr( $request->env->{PATH_INFO},
+        length( $jedi_app->jedi_base_route ) - 1 );
+    my $file = file( $jedi_app->jedi_config->{$class}{template_dir},
+        'public', $delta_path );
     return 1 if !-f $file;
 
     my ( $mime_type, $encoding ) = by_suffix($file);
@@ -160,7 +162,7 @@ Jedi::Plugin::Template::Role - Role imported by Jedi::Plugin::Template
 
 =head1 VERSION
 
-version 1.000
+version 1.001
 
 =head1 DESCRIPTION
 

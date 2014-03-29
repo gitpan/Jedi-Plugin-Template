@@ -13,7 +13,7 @@ package Jedi::Plugin::Template;
 use strict;
 use warnings;
 
-our $VERSION = '1.000';    # VERSION
+our $VERSION = '1.001';    # VERSION
 
 use Import::Into;
 use Module::Runtime qw/use_module/;
@@ -40,7 +40,7 @@ Jedi::Plugin::Template - Plugin for Template Toolkit
 
 =head1 VERSION
 
-version 1.000
+version 1.001
 
 =head1 DESCRIPTION
 
